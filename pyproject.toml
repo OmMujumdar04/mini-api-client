@@ -1,0 +1,30 @@
+[project]
+name = "mini-api-client"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Dumbbot1520", email = "ommujumdar004@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/apiclient"]
+
+[project.scripts]
+apiclient = "apiclient.main:main"
+
+[tool.mypy]
+python_version = "3.14.4"
+strict = true
+plugins = ["pydantic.mypy"]
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.0",
+]
